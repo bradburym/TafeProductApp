@@ -34,13 +34,16 @@ namespace ProductApps
                 decimal myPayment;
                 decimal myDelivery;
                 decimal myWrap;
+                decimal myGST;
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 myPayment = cProduct.calTotalPayment();
                 myDelivery = myPayment + 25m;
                 myWrap = myDelivery + 5m;
+                myGST = myWrap * 1.1m;
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBlock.Text = Convert.ToString(myDelivery);
                 wrapChargeTextBlock.Text = Convert.ToString(myWrap);
+                gstTextBlock.Text = Convert.ToString(myGST);
             }
             catch (FormatException)
             {

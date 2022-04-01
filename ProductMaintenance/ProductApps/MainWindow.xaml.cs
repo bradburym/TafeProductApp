@@ -33,11 +33,14 @@ namespace ProductApps
             {
                 decimal myPayment;
                 decimal myDelivery;
+                decimal myWrap;
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 myPayment = cProduct.calTotalPayment();
                 myDelivery = myPayment + 25m;
+                myWrap = myDelivery + 5m;
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBlock.Text = Convert.ToString(myDelivery);
+                wrapChargeTextBlock.Text = Convert.ToString(myWrap);
             }
             catch (FormatException)
             {
@@ -52,6 +55,7 @@ namespace ProductApps
             quantityTextBox.Text = "";
             totalPaymentTextBlock.Text = "";
             totalChargeTextBlock.Text = "";
+            wrapChargeTextBlock.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)

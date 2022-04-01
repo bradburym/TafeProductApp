@@ -63,7 +63,7 @@ namespace ProductApps
         //Calculate the total payment
         public decimal calTotalPayment()
         {
-            TotalPayment = Price * Quantity + 25m;
+            TotalPayment = Price * Quantity;
             return TotalPayment;
         }
     }
